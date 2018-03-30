@@ -39,7 +39,7 @@ namespace CONTROL_DE_ACCESO
             if (leer.Read())
             {
                 MessageBox.Show("Bienvenido al sistema de control de acceso");
-                CONTROL_DE_ACCESO.Menu llamar = new CONTROL_DE_ACCESO.Menu();
+                Menu_Principal llamar = new Menu_Principal();
                 llamar.Show();
                 this.Hide();
 

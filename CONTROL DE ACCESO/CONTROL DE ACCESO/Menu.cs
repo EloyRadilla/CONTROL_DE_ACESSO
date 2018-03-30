@@ -63,5 +63,10 @@ namespace CONTROL_DE_ACCESO
             serialPort1.Close();
             txt_uid.Text = entrada;
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

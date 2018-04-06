@@ -41,6 +41,12 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_P = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_M = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_D = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -55,7 +61,7 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(316, 106);
+            this.txt_nombre.Location = new System.Drawing.Point(265, 66);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(100, 20);
             this.txt_nombre.TabIndex = 1;
@@ -63,7 +69,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(313, 73);
+            this.label1.Location = new System.Drawing.Point(262, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 2;
@@ -72,7 +78,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(313, 149);
+            this.label2.Location = new System.Drawing.Point(262, 296);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 5;
@@ -80,14 +86,14 @@
             // 
             // txt_uid
             // 
-            this.txt_uid.Location = new System.Drawing.Point(316, 185);
+            this.txt_uid.Location = new System.Drawing.Point(265, 328);
             this.txt_uid.Name = "txt_uid";
             this.txt_uid.Size = new System.Drawing.Size(100, 20);
             this.txt_uid.TabIndex = 4;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(239, 299);
+            this.button2.Location = new System.Drawing.Point(27, 381);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(155, 54);
             this.button2.TabIndex = 3;
@@ -97,7 +103,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(239, 220);
+            this.button3.Location = new System.Drawing.Point(234, 381);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(206, 54);
             this.button3.TabIndex = 6;
@@ -145,11 +151,65 @@
             this.button7.Text = "Regresar al menu";
             this.button7.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(262, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Apellido Paterno";
+            // 
+            // txt_P
+            // 
+            this.txt_P.Location = new System.Drawing.Point(265, 132);
+            this.txt_P.Name = "txt_P";
+            this.txt_P.Size = new System.Drawing.Size(100, 20);
+            this.txt_P.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(262, 167);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Apellido Materno";
+            // 
+            // txt_M
+            // 
+            this.txt_M.Location = new System.Drawing.Point(265, 193);
+            this.txt_M.Name = "txt_M";
+            this.txt_M.Size = new System.Drawing.Size(100, 20);
+            this.txt_M.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(262, 236);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Departamento ";
+            // 
+            // txt_D
+            // 
+            this.txt_D.Location = new System.Drawing.Point(265, 262);
+            this.txt_D.Name = "txt_D";
+            this.txt_D.Size = new System.Drawing.Size(100, 20);
+            this.txt_D.TabIndex = 15;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 379);
+            this.ClientSize = new System.Drawing.Size(524, 463);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txt_D);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_M);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txt_P);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -183,5 +243,11 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_P;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_M;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_D;
     }
 }

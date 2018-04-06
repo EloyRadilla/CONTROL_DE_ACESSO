@@ -24,7 +24,7 @@ namespace CONTROL_DE_ACCESO
         {
             try
             {
-                string consulta = string.Format("INSERT INTO `rfidbd`.`datos`(`uid`,`nombre`,`fechaderegistro`)VALUES('{0}','{1}','{2}');", txt_uid.Text, txt_nombre.Text, DateTime.Now.ToString("dd-MM-yyyy"));
+                string consulta = string.Format("INSERT INTO `rfidbd`.`datos`(`uid`,`nombre`,`fechaderegistro`,`apellidopaterno`,`apellidomaterno`,`departamento`)VALUES('{0}','{1}','{2}','{3}','{4}','{5}');", txt_uid.Text, txt_nombre.Text, DateTime.Now.ToString("dd-MM-yyyy"),txt_P,txt_M,txt_D);
                 string cadenaConexion = @"server=127.0.0.1; database=rfidbd; User id=root; password="";";
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, cadenaConexion);
                 MySqlCommandBuilder comando = new MySqlCommandBuilder(adaptador);

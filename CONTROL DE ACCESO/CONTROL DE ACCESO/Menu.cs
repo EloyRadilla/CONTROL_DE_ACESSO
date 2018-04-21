@@ -14,47 +14,39 @@ namespace CONTROL_DE_ACCESO
 {
     public partial class Menu : Form
     {
+        string connectionString = @"server=127.0.0.1; database=rfidbd; User id=root; password= ";
+        int iddatos = 0;
         public Menu()
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)          
         {
-            try
+            using (MySqlConnection mysqlcon = new MySqlConnection(connectionString))
             {
-                string consulta = string.Format("INSERT INTO `rfidbd`.`datos`(`uid`,`nombre`,`fechaderegistro`,`apellidopaterno`,`apellidomaterno`,`departamento`)VALUES('{0}','{1}','{2}','{3}','{4}','{5}');", txt_uid.Text, txt_nombre.Text, DateTime.Now.ToString("dd-MM-yyyy"),txt_P,txt_M,txt_D);
-                string cadenaConexion = @"server=127.0.0.1; database=rfidbd; User id=root; password="";";
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, cadenaConexion);
-                MySqlCommandBuilder comando = new MySqlCommandBuilder(adaptador);
-                DataTable dt = new DataTable();
-                adaptador.Fill(dt);
-                MessageBox.Show("Agregado");
+                mysqlcon.Open();
+                MySqlCommand mysqlcmd = new MySqlCommand("Agregar_editar",mysqlcon);
+                mysqlcmd.CommandType = CommandType.StoredProcedure;
+                mysqlcmd.Parameters.AddWithValue("_iddatos",iddatos);
+                mysqlcmd.Parameters.AddWithValue("_uid", txt_uid.Text.Trim());
+                mysqlcmd.Parameters.AddWithValue("_nombre", txt_nombre.Text.Trim());
+                mysqlcmd.Parameters.AddWithValue("_fecharegistro", iddatos);
+                mysqlcmd.Parameters.AddWithValue("_apellidopaterno", txt_P.Text.Trim());
+                mysqlcmd.Parameters.AddWithValue("_apellidomaterno", txt_M.Text.Trim());
+                mysqlcmd.Parameters.AddWithValue("_departamento", txt_D.Text.Trim());
+                mysqlcmd.ExecuteNonQuery();
+                MessageBox.Show("Agregado correctamente"); 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("error " + ex.Message);
-            }
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string consulta = string.Format("SELECT * FROM rfidbd.datos where uid = '{0}'", txt_uid.Text);
-                string cadenaConexion = @"server=127.0.0.1; database=rfidbd; User id=root; password=;";
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, cadenaConexion);
-                MySqlCommandBuilder comando = new MySqlCommandBuilder(adaptador);
-                DataTable dt = new DataTable();
-                adaptador.Fill(dt);
-                MessageBox.Show(string.Format("id: {0} uid: {1} nombre: {2} fecha: {3}", dt.Rows[0].ItemArray[0].ToString(), dt.Rows[0].ItemArray[1].ToString(), dt.Rows[0].ItemArray[2].ToString(), dt.Rows[0].ItemArray[3].ToString()));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex.Message);
-            }
-        }
+            
+        } 
 
         private void button3_Click(object sender, EventArgs e)
         {

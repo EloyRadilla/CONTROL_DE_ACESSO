@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Agregar = new System.Windows.Forms.Button();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_uid = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.Buscar = new System.Windows.Forms.Button();
+            this.Eliminar = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_P = new System.Windows.Forms.TextBox();
@@ -45,20 +45,20 @@
             this.txt_M = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_D = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_B = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // Agregar
             // 
-            this.button1.Location = new System.Drawing.Point(27, 280);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 32);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Agregar.Location = new System.Drawing.Point(27, 280);
+            this.Agregar.Name = "Agregar";
+            this.Agregar.Size = new System.Drawing.Size(92, 32);
+            this.Agregar.TabIndex = 0;
+            this.Agregar.Text = "Agregar";
+            this.Agregar.UseVisualStyleBackColor = true;
+            this.Agregar.Click += new System.EventHandler(this.button1_Click);
             // 
             // txt_nombre
             // 
@@ -106,23 +106,25 @@
             // 
             this.serialPort1.PortName = "COM3";
             // 
-            // button4
+            // Buscar
             // 
-            this.button4.Location = new System.Drawing.Point(666, 35);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 29);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Buscar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Buscar.Location = new System.Drawing.Point(666, 35);
+            this.Buscar.Name = "Buscar";
+            this.Buscar.Size = new System.Drawing.Size(115, 29);
+            this.Buscar.TabIndex = 7;
+            this.Buscar.Text = "Buscar";
+            this.Buscar.UseVisualStyleBackColor = true;
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
-            // button6
+            // Eliminar
             // 
-            this.button6.Location = new System.Drawing.Point(145, 280);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(112, 32);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Eliminar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.Eliminar.Location = new System.Drawing.Point(145, 280);
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Size = new System.Drawing.Size(112, 32);
+            this.Eliminar.TabIndex = 9;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // button7
             // 
@@ -181,20 +183,24 @@
             this.txt_D.Size = new System.Drawing.Size(157, 20);
             this.txt_D.TabIndex = 15;
             // 
-            // textBox1
+            // txt_B
             // 
-            this.textBox1.Location = new System.Drawing.Point(405, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(239, 20);
-            this.textBox1.TabIndex = 17;
+            this.txt_B.Location = new System.Drawing.Point(405, 40);
+            this.txt_B.Name = "txt_B";
+            this.txt_B.Size = new System.Drawing.Size(239, 20);
+            this.txt_B.TabIndex = 17;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(369, 95);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(439, 278);
             this.dataGridView1.TabIndex = 18;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // Menu
             // 
@@ -202,7 +208,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 463);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_B);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_D);
             this.Controls.Add(this.label4);
@@ -210,14 +216,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_P);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.Eliminar);
+            this.Controls.Add(this.Buscar);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_uid);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_nombre);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Agregar);
             this.Name = "Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
@@ -229,15 +235,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Agregar;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_uid;
         private System.Windows.Forms.Button button3;
         private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button Buscar;
+        private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_P;
@@ -245,7 +251,7 @@
         private System.Windows.Forms.TextBox txt_M;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_D;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_B;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
